@@ -74,7 +74,6 @@ export default function TiptapEditor() {
 
     
     return <div style={{border:"1px solid red",padding:"0px",margin:"0px"}}>
-        <button onClick={(t)=>editor.chain().focus().toggleTaskList().run()}>Run</button>
         <EditorContent editor={editor} />
     </div>
 }
