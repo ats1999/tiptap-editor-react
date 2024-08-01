@@ -1,5 +1,5 @@
 import React from "react";
-import { EditorContent, useEditor } from '@tiptap/react'
+import { EditorContent, useEditor,BubbleMenu } from '@tiptap/react'
 import Document from '@tiptap/extension-document'
 import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
@@ -24,6 +24,9 @@ import Italic from '@tiptap/extension-italic'
 import Link from '@tiptap/extension-link'
 import Strike from '@tiptap/extension-strike'
 import Underline from '@tiptap/extension-underline'
+// custom extension
+// import BubbleMenu from "./extension/bubble-menu";
+
 
 // func
 import ListKeymap from '@tiptap/extension-list-keymap'
@@ -34,19 +37,19 @@ import History from '@tiptap/extension-history'
 export default function TiptapEditor() {
     const editor = useEditor({
         extensions: [
-          Document,
-          Paragraph,
-          Text,
+            Document,
+            Paragraph,
+            Text,
 
-          // extensions 
-          Blockquote,
-          BulletList,
-          OrderedList,
-          ListItem,
-          HardBreak,
-          Heading,
-          HorizontalRule,
-          TaskList,
+            // extensions 
+            Blockquote,
+            BulletList,
+            OrderedList,
+            ListItem,
+            HardBreak,
+            Heading,
+            HorizontalRule,
+            TaskList,
             TaskItem.configure({
                 nested: true,
             }),
@@ -63,17 +66,40 @@ export default function TiptapEditor() {
             // func
             ListKeymap,
             Placeholder,
-            History
+            History,
         ],
-      })
+    })
 
-      
+
     if (!editor) {
         return <h1>Loading...</h1>
     }
 
-    
-    return <div style={{border:"1px solid red",padding:"0px",margin:"0px"}}>
+
+    return <div style={{ border: "1px solid red", padding: "0px", margin: "0px" }}>
         <EditorContent editor={editor} />
+
+        <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
+        <div className="bubble-menu">
+          <button
+            onClick={() => editor.chain().focus().toggleBold().run()}
+            className={editor.isActive('bold') ? 'is-active' : ''}
+          >
+            B
+          </button>
+          <button
+            onClick={() => editor.chain().focus().toggleItalic().run()}
+            className={editor.isActive('italic') ? 'is-active' : ''}
+          >
+            I
+          </button>
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            S
+          </button>
+        </div>
+      </BubbleMenu>
     </div>
 }
