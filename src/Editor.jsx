@@ -34,6 +34,23 @@ import Placeholder from '@tiptap/extension-placeholder'
 import History from '@tiptap/extension-history'
 
 
+// icons
+import BoldIcon from "./icons/Bold";
+import ItalicIcon from "./icons/Italic";
+import UnderlineIcon from "./icons/Underline";
+import StrikeThroughIcon from "./icons/StrikeThrough";
+import CodeIcon from "./icons/Code";
+import CodeBlockIcon from "./icons/CodeBlock";
+import LinkIcon from "./icons/LinkIcon";
+import HighlightIcon from "./icons/Highlight";
+import TextColorIcon from "./icons/TextColor";
+import SubScriptIcon from "./icons/SubScript";
+import SuperScriptIcon from "./icons/SuperScript";
+import AlignLeftIcon from "./icons/AlignLeft";
+import CenterAlignIcon from "./icons/CenterAlign";
+import AlignRightIcon from "./icons/AlignRight";
+import AlignJustifyIcon from "./icons/AlignJustify";
+
 export default function TiptapEditor() {
     const editor = useEditor({
         extensions: [
@@ -85,19 +102,106 @@ export default function TiptapEditor() {
             onClick={() => editor.chain().focus().toggleBold().run()}
             className={editor.isActive('bold') ? 'is-active' : ''}
           >
-            B
+            <BoldIcon/>
           </button>
           <button
             onClick={() => editor.chain().focus().toggleItalic().run()}
             className={editor.isActive('italic') ? 'is-active' : ''}
           >
-            I
+            <ItalicIcon/>
           </button>
           <button
             onClick={() => editor.chain().focus().toggleStrike().run()}
             className={editor.isActive('strike') ? 'is-active' : ''}
           >
-            S
+            <UnderlineIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <StrikeThroughIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <CodeIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <CodeBlockIcon/>
+          </button>
+
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <LinkIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <HighlightIcon/>
+          </button>
+
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <TextColorIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <SubScriptIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <SuperScriptIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <AlignLeftIcon/>
+          </button>
+
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <CenterAlignIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <AlignRightIcon/>
+          </button>
+
+          <button
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            className={editor.isActive('strike') ? 'is-active' : ''}
+          >
+            <AlignJustifyIcon/>
           </button>
         </div>
       </BubbleMenu>
