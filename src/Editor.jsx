@@ -26,14 +26,15 @@ import Italic from '@tiptap/extension-italic'
 import Link from '@tiptap/extension-link'
 import Strike from '@tiptap/extension-strike'
 import Underline from '@tiptap/extension-underline'
-// custom extension
-// import BubbleMenu from "./extension/bubble-menu";
-
+import TextStyle from '@tiptap/extension-text-style'
+import Subscript from '@tiptap/extension-subscript'
+import Superscript from '@tiptap/extension-superscript'
 
 // func
 import ListKeymap from '@tiptap/extension-list-keymap'
 import Placeholder from '@tiptap/extension-placeholder'
 import History from '@tiptap/extension-history'
+import { Color } from '@tiptap/extension-color'
 
 
 // custom 
@@ -59,6 +60,7 @@ export default function TiptapEditor() {
         nested: true,
       }),
       CodeBlock,
+      TextStyle,
 
       // marks
       Bold,
@@ -73,6 +75,9 @@ export default function TiptapEditor() {
       ListKeymap,
       Placeholder,
       History,
+      Color,
+      Subscript,
+      Superscript
     ],
   })
 
